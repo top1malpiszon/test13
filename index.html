@@ -109,7 +109,8 @@
             justify-content: center;
             flex-wrap: nowrap;
             gap: 50px;
-            margin: 30px auto;
+            /* Zmniejszony odstęp */
+            margin: 20px auto;
         }
 
         .stream-container {
@@ -274,8 +275,28 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
-            margin-top: 30px;
+            /* Zmniejszony odstęp */
+            margin-top: 20px;
             align-items: center;
+        }
+        
+        /* New styles for two-column layout */
+        .two-column-links {
+            display: flex;
+            gap: 50px; /* Increased gap */
+            justify-content: center;
+            width: 100%;
+            max-width: 1050px;
+            /* Zmniejszony odstęp */
+            margin: 20px auto;
+        }
+
+        .link-column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1;
+            max-width: 500px;
         }
 
         .subtitle-container {
@@ -413,17 +434,19 @@
             max-width: 500px;
             height: 2px;
             background-image: linear-gradient(to right, rgba(255, 215, 0, 0.3), #FFEA00, rgba(255, 215, 0, 0.3));
-            margin: 40px auto;
+            /* Zmniejszony odstęp */
+            margin: 20px auto;
             border-radius: 1px;
             opacity: 0.8;
         }
 
         .stream-section-separator {
             width: 100%;
-            max-width: 850px; 
+            max-width: 850px;
             height: 2px;
             background-image: linear-gradient(to right, rgba(255, 215, 0, 0.3), #FFEA00, rgba(255, 215, 0, 0.3));
-            margin: 40px auto;
+            /* Zmniejszony odstęp */
+            margin: 20px auto;
             border-radius: 1px;
             opacity: 0.8;
         }
@@ -433,7 +456,8 @@
             max-width: 500px;
             height: 2px;
             background-image: linear-gradient(to right, rgba(255, 215, 0, 0.3), #FFEA00, rgba(255, 215, 0, 0.3));
-            margin: 40px auto;
+            /* Zmniejszony odstęp */
+            margin: 20px auto;
             border-radius: 1px;
             opacity: 0.8;
         }
@@ -444,12 +468,27 @@
                 flex-wrap: wrap;
             }
 
+            .links-container {
+                flex-direction: column;
+            }
+
             .link-button {
                 justify-content: flex-start;
             }
 
             .streams-container {
                 flex-direction: column;
+            }
+
+            .two-column-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px; /* Reduced gap for smaller screens */
+            }
+
+            .link-column {
+                width: 100%;
+                max-width: 500px;
             }
         }
     </style>
@@ -558,181 +597,187 @@
         </header>
         <div class="section-separator"></div>
         <main class="links-container">
-            <a href="https://partner.betclic.pl/sroka/" target="_blank" class="link-button">
-                <img src="images/tylko18x.png" alt="18+" class="age-restriction-image">
-                <div class="link-icon">
-                    <img src="images/betclic.png" alt="betclic icon">
+            <div class="two-column-links">
+                <div class="link-column">
+                    <a href="https://partner.betclic.pl/sroka/" target="_blank" class="link-button">
+                        <img src="images/tylko18x.png" alt="18+" class="age-restriction-image">
+                        <div class="link-icon">
+                            <img src="images/betclic.png" alt="betclic icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">BETCLIC - GRAJ BEZ PODATKU!</p>
+                            <div class="subtitle-container">
+                                <p class="link-subtitle purple-code-text">Kod: SROKA</p>
+                                <button class="copy-button" data-code="SROKA">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/epicgames3.png" alt="epicgames icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">EPIC GAMES - KOD TWÓRCY</p>
+                            <div class="subtitle-container">
+                                <p class="link-subtitle purple-code-text">Kod: SROKA</p>
+                                <button class="copy-button" data-code="SROKA">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a href="https://operagx.gg/srokaaaaff" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/opera.png" alt="opera icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">Nie czekaj i już teraz skorzystaj z przeglądarki!</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a href="https://bit.ly/417gFqT" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/allegro2.png" alt="allegro icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">Jak grasz, to gamEXP z Allegro!</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a href="https://bit.ly/Cloud3S" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/hyperx.png" alt="hyperx icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">Sprzet od HyperX!</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
                 </div>
-                <div class="link-text">
-                    <p class="link-title">BETCLIC - GRAJ BEZ PODATKU!</p>
-                    <div class="subtitle-container">
-                        <p class="link-subtitle purple-code-text">Kod: SROKA</p>
-                        <button class="copy-button" data-code="SROKA">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
-                    </div>
+                <div class="link-column">
+                    <a href="https://upu.gg/c/aopl/528859476/banner" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/aorus3.png" alt="aorus icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">ODSWIEŻ SWÓJ ZESTAW!</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a href="https://www.sferis.pl/actina-x-sroka?utm_source=TwitchActinaXSroka&utm_medium=ActinaXSroka&utm_campaign=rozowy_komputer&utm_id=ActinaXSroka+220725" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/actin.png" alt="actin icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">PIĘKNA NA ZEWNĄTRZ BESTIA W ŚRODKU!</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a href="https://bit.ly/CrunchipsSummer" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/lorenz.png" alt="lorenz icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">Lap letni vibe z paczką!</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a href="https://discord.com/invite/DBZb8Wm65G" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/srokaez.png" alt="dc icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">SIGMY SROKI</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
+                    <a href="https://tipply.pl/@srokaaa_" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/srokaowo.png" alt="DONO icon">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">DONATE</p>
+                            <p class="link-subtitle purple-code-text">Dotacje nie podlegają zwrotom!</p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
                 </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/epicgames3.png" alt="epicgames icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">EPIC GAMES - KOD TWÓRCY</p>
-                    <div class="subtitle-container">
-                        <p class="link-subtitle purple-code-text">Kod: SROKA</p>
-                        <button class="copy-button" data-code="SROKA">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://operagx.gg/srokaaaaff" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/opera.png" alt="opera icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Nie czekaj i już teraz skorzystaj z przeglądarki!</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://bit.ly/417gFqT" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/allegro2.png" alt="allegro icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Jak grasz, to gamEXP z Allegro!</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://bit.ly/Cloud3S" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/hyperx.png" alt="hyperx icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Sprzet od HyperX!</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://upu.gg/c/aopl/528859476/banner" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/aorus3.png" alt="aorus icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">ODSWIEŻ SWÓJ ZESTAW!</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://www.sferis.pl/actina-x-sroka?utm_source=TwitchActinaXSroka&utm_medium=ActinaXSroka&utm_campaign=rozowy_komputer&utm_id=ActinaXSroka+220725" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/actin.png" alt="actin icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">PIĘKNA NA ZEWNĄTRZ BESTIA W ŚRODKU!</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://bit.ly/CrunchipsSummer" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/lorenz.png" alt="lorenz icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">Lap letni vibe z paczką!</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://discord.com/invite/DBZb8Wm65G" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/srokaez.png" alt="dc icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">SIGMY SROKI</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
-            <a href="https://tipply.pl/@srokaaa_" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                </svg>
-                <div class="link-icon">
-                    <img src="images/srokaowo.png" alt="DONO icon">
-                </div>
-                <div class="link-text">
-                    <p class="link-title">DONATE</p>
-                    <p class="link-subtitle purple-code-text">Dotacje nie podlegają zwrotom!</p>
-                </div>
-                <div class="link-loading-bar"></div>
-            </a>
+            </div>
         </main>
         <div class="stream-section-separator"></div>
         <div class="streams-container">
